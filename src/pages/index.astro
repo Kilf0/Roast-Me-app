@@ -1,0 +1,179 @@
+---
+
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Roast Me</title>
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+			body {
+				font-family: sans-serif;
+				font-size: 16px;
+				background-color: #EDD602;
+				padding: 0;
+				margin: 0;
+			}
+			label {
+				display: block;
+				margin-bottom: 1rem;
+			}
+			input {
+				display: block;
+				padding: 1rem;
+				width: 100%;
+				border: 1px solid #ddd;
+				font: inherit;
+			}
+			button {
+				padding: 1rem;
+				background: white;
+				color: black;
+				font: inherit;
+				font-weight: bold;
+				text-transform: uppercase;
+				border: 1px solid black;
+				border-radius: 10px;
+				transition: all 1s ease;
+				
+			}
+			button:hover{
+			padding: 1rem;
+				background: black;
+				color: white;
+				font: inherit;
+				font-weight: bold;
+				text-transform: uppercase;
+				border: 1px solid black;
+				border-radius: 10px;
+			}
+			output {
+				margin-top: 2rem;
+				display: block;
+				font-size: 20px;
+				line-height: 1.5;
+				margin-bottom: 2rem;
+			}
+			.indicator {
+				position: fixed;
+				align-items: center;
+				justify-content: center;
+				top: 0;
+				left: 0;
+				font-size: 3rem;
+				color: black;
+				background: white;
+				display: none;
+				font-weight: bold;
+				font-size: 3rem;
+				width: 100%;
+				height: 100%;
+				transition: all 5s ease;
+
+			}
+			.indicator:hover {
+				position: fixed;
+				align-items: center;
+				justify-content: center;
+				top: 0;
+				left: 0;
+				font-size: 3rem;
+				color: white;
+				background: black;
+				display: none;
+				font-weight: bold;
+				font-size: 3rem;
+				width: 100%;
+				height: 100%;
+			}
+			.indicator.active {
+				display: flex;
+			}
+			.waves-top,
+			.waves-bottom {
+				width: 100%;
+				display: block;
+			}
+			.waves-top {
+				margin-top: -2px;
+				margin-left: -2px;
+				width: calc(100% + 4px)
+			}
+			.waves-bottom {
+				margin-top: 10px;
+			}
+			.content {
+				padding: 2rem;
+				max-width: 700px;
+				margin: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<svg class="waves-top" preserveAspectRatio="none" viewBox="0 0 266 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M265 34C243 45.6667 195 56 189 9C168 27.3333 129 48 90 40C63 24 79 14 55 1C59.6667 10 64 34 1 34V1H55H265V34Z" fill="white"/>
+			<path d="M265 34C243 45.6667 195 56 189 9C168 27.3333 129 48 90 40C63 24 79 14 55 1C59.6667 10 64 34 1 34V1H265V34Z" stroke="black"/>
+		</svg>
+		<div class="content">
+			<h1>Welcome to the Roast Me app!</h1>
+
+			<h2> Tell Us About Yourself</h2>
+			<form>
+				<label>
+					Name <input id="name" type="text" required>
+				</label>
+				<label>
+					Age <input id="age" type="number" required>
+				</label>
+				<label>
+					Height <input id="height" type="text" required>
+				</label>
+				<label>
+					Weight <input id="weight" type="number" required>
+				</label>
+				<label>
+					Something Interesting About Yourself <input id="interests" type="text" required>
+				</label>
+				<button>Roast Me</button>
+			</form>
+			<output>
+			</output>
+			<div class="indicator">
+				Loading...
+			</div>
+		</div>
+		<svg class="waves-bottom" viewBox="0 0 266 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M1 10.8588C23 -0.807852 71 -11.1412 77 35.8588C98 17.5255 137 -3.14118 176 4.85882C203 20.8588 187 30.8588 211 43.8588C206.333 34.8588 202 10.8588 265 10.8588V43.8588H211H1V10.8588Z" fill="white"/>
+			<path d="M1 10.8588C23 -0.807852 71 -11.1412 77 35.8588C98 17.5255 137 -3.14118 176 4.85882C203 20.8588 187 30.8588 211 43.8588C206.333 34.8588 202 10.8588 265 10.8588V43.8588H1V10.8588Z" stroke="black"/>
+		</svg>
+		<script>
+			const form = document.querySelector('form');
+			form.addEventListener('submit', function(event) {
+				event.preventDefault();
+				document.querySelector('.indicator').classList.add('active');
+				const data = {
+				name: form.querySelector('#name').value,
+				age: form.querySelector('#age').value,
+				height: form.querySelector('#height').value,
+				weight: form.querySelector('#weight').value,
+				interests: form.querySelector('#interests').value
+		};
+				fetch("/api/ai.json", {
+					//options
+					method: "POST",
+					body: JSON.stringify(data)
+				}).then((respose) => respose.json ()).then((data) => {
+					document.querySelector('.indicator').classList.remove('active');
+					document.querySelector('output').innerHTML = data.message;
+				}).catch(console.error);
+			});
+		</script>
+	</body>
+</html>
+
