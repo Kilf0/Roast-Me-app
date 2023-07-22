@@ -2,6 +2,9 @@ export async function post({ request }) {
 	console.log("Pinging the api");
 
   const body = await request.json();
+  
+  console.log(body);
+
   const data = {
     model: "gpt-3.5-turbo",
     messages: [
@@ -16,7 +19,7 @@ export async function post({ request }) {
       },
     ],
     temperature: 0.7,
-    max_tokens: 700,
+    max_tokens: 1700,
   };
 
   const chatGpt = await fetch("https://api.openai.com/v1/chat/completions", {
@@ -31,11 +34,10 @@ export async function post({ request }) {
   const response = await chatGpt.json();
   const text = response.choices[0].message.content;
 
-  // log question
-  console.log(body.question);
   // log answer
-  console.log(text);
   console.log(response);
+  console.log(text)
+
   return new Response(
     JSON.stringify({
       message: text,
