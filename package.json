@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "@astrojs/netlify": "^2.5.0",
-    "astro": "^2.9.1"
+    "astro": "^2.9.1",
+    "openai": "^3.3.0"
   },
   "devDependencies": {
     "prettier": "3.0.0",

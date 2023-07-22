@@ -21,7 +21,7 @@ export async function post({ request }) {
 
   const chatGpt = await fetch("https://api.openai.com/v1/chat/completions", {
     headers: {
-      Authorization: `Bearer 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`,
+      Authorization: `Bearer ${import.meta.env.OPEN_AI_KEY}`,
       "Content-Type": "application/json",
     },
     method: "POST",
