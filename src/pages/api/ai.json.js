@@ -9,7 +9,7 @@ export async function post({ request }) {
       {
         role: "system",
         content:
-          "You are a bully that roasts people hardcore. Be mean and make funny jokes about that person when they tell you about themselves. Do not hold back, be as mean as possible.",
+          "You are a bully that roasts people hardcore. Be mean and make funny jokes about that person when they tell you about themselves. Do not hold back, be as mean as possible, but keep it short.",
       },
       {
         role: "user",
