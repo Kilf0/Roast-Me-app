@@ -1,30 +1,32 @@
-
-        <motivate>
-            <meta title="Motivate Me" />
-        </motivate>
-
+	 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Motivate Me</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@900&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@900&display=swap" rel="stylesheet">
+		<title>Motivation Buddy</title>
 		<style>
-
 			* {
 				box-sizing: border-box;
 			}
 			body {
-				font-family: sans-serif;
+				font-family: 'Nunito', sans-serif;
 				font-size: 16px;
-				background-color: #EDD255;
+				background-color: #FFDC65;
 				padding: 0;
 				margin: 0;
 			}
 			label {
 				display: block;
 				margin-bottom: 1rem;
+				font-size: 1.7rem;
 			}
 			input {
 				display: block;
@@ -32,18 +34,20 @@
 				width: 100%;
 				border: 1px solid #ddd;
 				font: inherit;
+				border-color: #FFDC65;
+				border-radius: 10px;
 			}
 			button {
-				padding: 1rem;
-				background: white;
+				padding: 0.5rem;
+				background: #FFDC65;
 				color: black;
 				font: inherit;
-				font-weight: bold;
+				font-size: 1.4rem;
 				text-transform: uppercase;
-				border: 1px solid black;
-				border-radius: 10px;
+				border: none;
+				border-radius: 20px;
 				transition: all 1s ease;
-				
+				margin-left: 8rem;
 			}
 			button:hover{
 			padding: 1rem;
@@ -77,7 +81,6 @@
 				width: 100%;
 				height: 100%;
 				transition: all 5s ease;
-				
 
 			}
 			.indicator:hover {
@@ -109,66 +112,101 @@
 				width: calc(100% + 4px)
 			}
 			.waves-bottom {
-				margin-top: 20rem;
-				margin-bottom: 3rem;
-				width: calc(100% + 4px)
-				
-				
+				margin-top: 0px;
+				margin-bottom: -20px;
 			}
-			.content {
-				padding: 2rem;
+			.content-top {
+				padding: 0rem;
 				max-width: 700px;
-				margin: auto;
+				margin-left: 1rem;
 			}
-			h1,h2 {
+			.content-top {
+			padding: 0rem;
+			max-width: 700px;
+			margin-left: 1rem;
+		}
+			h1 {
 				font-size: 7rem;
-				margin-bottom: -1rem;
-				margin-top: -2rem;
-				font-family: comic sans ms;
+				line-height: 80%;
+				margin-left: 0;
+				margin-top: 0;
+				margin-bottom: 0;
 			}
-			h2 {
-				margin-top: -2rem;
+			.secondaryText {
+				font-family: 'Times New Roman', Times, serif;
+				font-size: 2.5rem;
+				margin-top: 1rem;
+				inline-size: 28rem;
 			}
-			 h3 {
-				font-size: 2rem;
-				font-family: georgia;
-				margin-top: 2rem;
-
-			}
-			p {
+			.h2a {
 				font-size: 1.2rem;
-				font-family: georgia;
-				margin-top: 20rem;
-				margin-bottom: 0.3rem;
-				margin-left: 4rem;
+				padding-top: 15rem;
+				display: flex;
+				justify-content: center;
+				margin-bottom: 0;
 			}
-			a {
-				font-weight: bold;
+			.h2b {
+				text-decoration: underline;
+				color: #464646;
 				font-size: 1.2rem;
-				font-family: georgia;
-				margin-left: 7.7rem;
-				color: grey;
+				padding-top: 0;
+				display: flex;
+				justify-content: center;
+				margin-top: 0;
+			}
+			h3 {
+				margin-top: 10rem;
+				font-size: 3rem;
+				line-height: 3rem;
+			}
+			.content-bottom {
+				background-color: white;
+				padding: 2rem;
+			}
+			
+			h3 {
+				margin-top: 10rem;
+				font-size: 3rem;
+				line-height: 3rem;
 			}
 		</style>
 	</head>
 	<body>
-		<svg class="waves-top" preserveAspectRatio="none" viewBox="0 0 266 45" fill="none" xmlns="http://www.w3.org/2000/svg">
-			<path d="M265 34C243 45.6667 195 56 189 9C168 27.3333 129 48 90 40C63 24 79 14 55 1C59.6667 10 64 34 1 34V1H55H265V34Z" fill="white"/>
-			<path d="M265 34C243 45.6667 195 56 189 9C168 27.3333 129 48 90 40C63 24 79 14 55 1C59.6667 10 64 34 1 34V1H265V34Z" stroke="white"/>
+		<svg class="waves-top" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" width="430.498" height="78.314" viewBox="0 0 430.498 78.314">
+		  <path id="Path_8" data-name="Path 8" d="M327.145,67.984C126.973-74.993,22.379,41.264,22.379,41.264Z" transform="translate(452.877 75) rotate(180)" fill="#fff"/>
+		  <path id="Path_7" data-name="Path 7" d="M0,51.825S16.218-63.989,194.917,41.976" transform="translate(194.917 75) rotate(180)" fill="#fff"/>
+		  <rect id="Rectangle_14" data-name="Rectangle 14" width="430" height="34" transform="translate(0.396)" fill="#fff"/>
 		</svg>
-		<div class="content">
 
-			<h1>Hey,</h1>
-
-			<h2>Buddy!</h2>
-
-			<h3>Thanks for coming to me instead of that jerk. Now let's get you in a good mood!</h3>
+		<div class="content-top">
+			<h1>Hey, Buddy!</h1>
 			
+			<p class="secondaryText">
+				Thanks for ditching that
+				jerk and coming over here!
+				I'll try my best to make your day :D
+			</p>
 			
-			<svg class="waves-bottom" preserveAspectRatio="none" viewBox="0 0 266 45" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<path d="M1 10.8588C23 -0.807852 71 -11.1412 77 35.8588C98 17.5255 137 -3.14118 176 4.85882C203 20.8588 187 30.8588 211 43.8588C206.333 34.8588 202 10.8588 265 10.8588V43.8588H211H1V10.8588Z" fill="white"/>
-				<path d="M1 10.8588C23 -0.807852 71 -11.1412 77 35.8588C98 17.5255 137 -3.14118 176 4.85882C203 20.8588 187 30.8588 211 43.8588C206.333 34.8588 202 10.8588 265 10.8588V43.8588H1V10.8588Z" stroke="white"/>
+			<h2 class="h2a">
+				IF YOU WOULD RATHER GET ROASTED,
+			</h2>
+			<index>
+				<meta title="Motivational Buddy" />
+			</index>
+	<h2 class="h2b">
+			<a href="/roast">LET'S GO TO THE BULLY.</a>
+			</h2>
+			
+			</div>
+			
+			<svg class="waves-bottom" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" width="430.22" height="66.391" viewBox="0 0 430.22 66.391">
+			  <path id="Path_5" data-name="Path 5" d="M282.452,385.1C82.28,291.145-.185,385.827-.185,385.827Z" transform="translate(0.185 -343.529)" fill="#fff"/>
+			  <path id="Path_6" data-name="Path 6" d="M228.089,384.89s16.2-91.871,201.946.173" transform="translate(0.185 -343.529)" fill="#fff"/>
+			  <rect id="Rectangle_15" data-name="Rectangle 15" width="430" height="25" transform="translate(0.185 41.391)" fill="#fff"/>
 			</svg>
+
+			<div class="content-bottom">
+			<h3> Let's get to know eachother, shall we?</h3>
 			<form>
 				<label>
 					Name <input id="name2" type="text" required>
@@ -183,9 +221,9 @@
 					Weight <input id="weight2" type="number" required>
 				</label>
 				<label>
-					Something that's troubling you <input id="troubles" type="text" required>
+					Something that is troubling you <input id="troubles" type="text" required>
 				</label>
-				<button>Motivate Me</button>
+				<button class="button">ENCOURAGEMENT AWAITS</button>
 			</form>
 			<output>
 			</output>
@@ -206,7 +244,7 @@
 				weight2: form.querySelector('#weight2').value,
 				troubles: form.querySelector('#troubles').value
 		};
-				fetch("/api/ai.json mtv", {
+				fetch("/api/ai.jsonmtv", {
 					//options
 					method: "POST",
 					body: JSON.stringify(data)
