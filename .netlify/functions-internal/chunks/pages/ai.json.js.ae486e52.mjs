@@ -1,4 +1,4 @@
-export async function post({ request }) {
+async function post({ request }) {
   const body = await request.json();
   
   console.log(body);
@@ -22,7 +22,7 @@ export async function post({ request }) {
 
   const chatGpt = await fetch("https://api.openai.com/v1/chat/completions", {
     headers: {
-      Authorization: `Bearer ${import.meta.env.OPEN_AI_KEY}`,
+      Authorization: `Bearer ${"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"}`,
       "Content-Type": "application/json",
     },
     method: "POST",
@@ -34,7 +34,7 @@ export async function post({ request }) {
 
   // log answer
   console.log(response);
-  console.log(text)
+  console.log(text);
 
   return new Response(
     JSON.stringify({
@@ -47,6 +47,6 @@ export async function post({ request }) {
       },
     }
   );
-
-  return new Response(null, { status: 400 });
 }
+
+export { post };
