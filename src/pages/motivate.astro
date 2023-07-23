@@ -1,6 +1,7 @@
----
 
----
+        <motivate>
+            <meta title="Motivate Me" />
+        </motivate>
 
 <html lang="en">
 	<head>
@@ -8,7 +9,7 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Roast Me</title>
+		<title>Motivate Me</title>
 		<style>
 
 			* {
@@ -108,7 +109,7 @@
 				width: calc(100% + 4px)
 			}
 			.waves-bottom {
-				margin-top: 6rem;
+				margin-top: 20rem;
 				margin-bottom: 3rem;
 				width: calc(100% + 4px)
 				
@@ -126,7 +127,7 @@
 				font-family: comic sans ms;
 			}
 			h2 {
-				margin-top: -4rem;
+				margin-top: -2rem;
 			}
 			 h3 {
 				font-size: 2rem;
@@ -157,17 +158,11 @@
 		</svg>
 		<div class="content">
 
-			<h1>boom,</h1>
+			<h1>Hey,</h1>
 
-			<h2>roasted.</h2>
+			<h2>Buddy!</h2>
 
-			<h3>The app where you tell me a little bit about yourself, and I will personally roast you.</h3>
-			
-			<index>
-				<meta title="Roast Me" />
-			</index>
-			<p> If You're Scared Of Getting Your Feelings Hurt,</p>
-			<a href="/motivate">Here's A Motivational Friend.</a>
+			<h3>Thanks for coming to me instead of that jerk. Now let's get you in a good mood!</h3>
 			
 			
 			<svg class="waves-bottom" preserveAspectRatio="none" viewBox="0 0 266 45" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -176,26 +171,26 @@
 			</svg>
 			<form>
 				<label>
-					Name <input id="name" type="text" required>
+					Name <input id="name2" type="text" required>
 				</label>
 				<label>
-					Age <input id="age" type="number" required>
+					Age <input id="age2" type="number" required>
 				</label>
 				<label>
-					Height <input id="height" type="text" required>
+					Height <input id="height2" type="text" required>
 				</label>
 				<label>
-					Weight <input id="weight" type="number" required>
+					Weight <input id="weight2" type="number" required>
 				</label>
 				<label>
-					Something Interesting About Yourself <input id="interests" type="text" required>
+					Something that's troubling you <input id="troubles" type="text" required>
 				</label>
-				<button>Roast Me</button>
+				<button>Motivate Me</button>
 			</form>
 			<output>
 			</output>
 			<div class="indicator">
-				Preparing Roast...
+				Preparing Motivation...
 			</div>
 		</div>
 		
@@ -205,13 +200,13 @@
 				event.preventDefault();
 				document.querySelector('.indicator').classList.add('active');
 				const data = {
-				name: form.querySelector('#name').value,
-				age: form.querySelector('#age').value,
-				height: form.querySelector('#height').value,
-				weight: form.querySelector('#weight').value,
-				interests: form.querySelector('#interests').value
+				name2: form.querySelector('#name2').value,
+				age2: form.querySelector('#age2').value,
+				height2: form.querySelector('#height2').value,
+				weight2: form.querySelector('#weight2').value,
+				troubles: form.querySelector('#troubles').value
 		};
-				fetch("/api/ai.json", {
+				fetch("/api/ai.json mtv", {
 					//options
 					method: "POST",
 					body: JSON.stringify(data)
