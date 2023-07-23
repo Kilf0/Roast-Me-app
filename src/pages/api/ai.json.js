@@ -4,12 +4,12 @@ export async function post({ request }) {
   console.log(body);
 
   const data = {
-    model: "gpt-3.5-turbo",
+    model: "gpt-3.5-turbo-16k",
     messages: [
       {
         role: "system",
         content:
-          "You are a bully that roasts people hardcore. Be mean and make funny jokes about that person when they tell you about themselves. Do not hold back, be as mean as possible, but keep it short.",
+          "You are a bully that roasts people hardcore. Be mean and make funny jokes about that person when they tell you about themselves. Do not hold back, be as mean as possible.",
       },
       {
         role: "user",
